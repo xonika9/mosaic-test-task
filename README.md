@@ -1,7 +1,29 @@
-# Vue 3 + Vite
+# Mosaic Test Task
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Тестовое задание на позицию Frontend-разработчика в компанию Mosaic
 
-## Recommended IDE Setup
+## Требования
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+1. Сделать компонент на Vue согласно макету <https://www.figma.com/file/hgLOGAoB5300JlFlKdAfyM/mosaic-test-task?t=lcpgSf1J0h52s4yO-6>
+2. При состояние фокуса добавляется курсор, лэйбл смещается вверх (использовать transition).
+3. При вводе текста счетчик символов увеличивается. При кол-во символов >=1000 появляется ошибка.
+4. Реализовать функционал очистки поля.
+5. Анимацию загрузки использовать любую.
+6. Шрифты, цвета, отступы согласно макету.
+7. Приветствуется написание стилей по БЭМ.
+
+### Установка
+
+```bash
+# Склонируйте репозиторий
+git clone https://github.com/xonika9/mosaic-test-task.git
+
+# Зайдите в папку проекта
+cd mosaic-test-task
+
+# Установите зависимости
+npm i
+
+# Запустите проект на localhost
+npm run dev
+```
