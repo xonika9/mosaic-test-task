@@ -2,6 +2,8 @@
 
 Тестовое задание на позицию Frontend-разработчика в компанию Mosaic
 
+[Ссылка на деплой](https://mosaic-test-task.vercel.app/)
+
 ## Требования
 
 1. Сделать компонент на Vue согласно макету <https://www.figma.com/file/hgLOGAoB5300JlFlKdAfyM/mosaic-test-task?t=lcpgSf1J0h52s4yO-6>
