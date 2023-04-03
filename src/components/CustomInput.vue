@@ -1,11 +1,16 @@
 <template>
   <div class="input__container">
     <p class="input__header">Текст перед полем ввода</p>
-
+    <img
+      v-if="isLoading"
+      class="input__loading"
+      src="../assets/loading.svg"
+      alt="loading"
+    />
     <label
       :class="[
         'input__label',
-        { 'input__label--focused': inputFocus || inputValue.length > 0 },
+        { input__label_focused: inputFocus || inputValue.length > 0 },
       ]"
       >Название поля</label
     >
@@ -14,7 +19,7 @@
       v-model="inputValue"
       @focus="inputFocus = true"
       @blur="inputFocus = false"
-      :class="{ 'input__text--error': error }"
+      :class="{ input__text_error: error }"
     ></textarea>
     <p v-if="error" class="input__error">Ошибка</p>
     <p class="input__counter">{{ inputValue.length }}/1000</p>
@@ -37,15 +42,15 @@
 
 .input__label {
   position: absolute;
-  top: 34px;
+  top: 32px;
   left: 12px;
   color: #303030;
   color: #878f97;
-  font-size: 14px;
+  font-size: 16px;
   transition: top 0.5s, font-size 0.5s;
 }
 
-.input__label--focused {
+.input__label_focused {
   font-size: 11px;
   line-height: 12px;
 }
@@ -57,9 +62,17 @@
   line-height: 24px;
 }
 
+.input__loading {
+  position: absolute;
+  top: 32px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+}
+
 .input__text {
   box-sizing: border-box;
-  padding: 20px 4px 4px 12px;
+  padding: 20px 28px 16px 12px;
   width: 100%;
   height: 146px;
   outline: none;
@@ -70,12 +83,13 @@
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   line-height: 22px;
+  caret-color: #2d9cdb;
 }
 
-.input__text--error {
-  border: 1px solid #d6675c;
+.input__text_error {
+  background: #fcf0ef;
 }
 .input__error {
   color: #d6675c;
@@ -95,7 +109,6 @@
   line-height: 20px;
   cursor: pointer;
 }
-
 </style>
 
 <script>
@@ -105,6 +118,7 @@ export default {
     return {
       inputValue: '',
       inputFocus: false,
+      isLoading: false,
     };
   },
   computed: {
@@ -115,6 +129,11 @@ export default {
   methods: {
     clearInput() {
       this.inputValue = '';
+    },
+  },
+  watch: {
+    inputValue(newValue) {
+      this.isLoading = newValue.length > 0;
     },
   },
 };
