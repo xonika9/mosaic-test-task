@@ -1,5 +1,5 @@
 <script setup>
-import CustomInput from './components/CustomInput.vue';
+import CustomInput from './components/CustomInput/CustomInput.vue';
 </script>
 
 <template>
